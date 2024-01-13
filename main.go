@@ -43,18 +43,18 @@ func Encryptor(inputFile string, outputFile string, key []byte) error {
 func main() {
 	key := []byte("Lorem Ipsum 5432")
 
-	filePattern := "safas.txt"
+	inputFile := "dummy.txt"
 	outputFile := "lohgabahayata.wleee"
 
-	err := Encryptor(filePattern, outputFile, key)
+	err := Encryptor(inputFile, outputFile, key)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	err = os.Remove(filePattern)
+	err = os.Remove(inputFile)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Printf("File '%s' encrypted and renamed to '%s'\n", filePattern, outputFile)
+	fmt.Printf("File '%s' encrypted and renamed to '%s'\n", inputFile, outputFile)
 }
